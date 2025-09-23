@@ -1,0 +1,23 @@
+{
+  "name": "faceit-ai-bot-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/web",
+    "apps/backend",
+    "apps/extension",
+    "apps/desktop",
+    "packages/ui",
+    "packages/utils"
+  ],
+  "scripts": {
+    "dev:web": "npm --prefix apps/web run dev",
+    "dev:backend": "npm --prefix apps/backend run dev",
+    "dev:extension": "npm --prefix apps/extension run dev",
+    "dev:desktop": "npm --prefix apps/desktop start",
+    "install:all": "npm install --workspaces --include-workspace-root",
+    "dev:all": "concurrently \"npm run dev:web\" \"npm run dev:backend\" \"npm run dev:desktop\""
+  },
+  "devDependencies": {
+    "concurrently": "8.2.2"
+  }
+}
